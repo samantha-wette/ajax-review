@@ -2,6 +2,12 @@
 
 function showFortune() {
   // TODO: get the fortune and show it in the fortune-text div
+  fetch('/fortune')
+  .then(response => response.text())
+  .then(responseData => {
+    document.querySelector('#fortune-text').innerHTML = responseData;
+  })
+  console.log('hello');
 }
 
 document.querySelector('#get-fortune-button').addEventListener('click', showFortune);
